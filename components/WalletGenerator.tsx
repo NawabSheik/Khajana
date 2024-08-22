@@ -285,13 +285,10 @@ const handleGenerateWallet=()=>{
                             Delete Wallets
                         </button>
                         </div>
-                       
 
-
-                
                         <div>
                             {wallets.map((wallet:any, index:number)=>(
-                                <div>
+                               <div key={index}> {/* Add a key here */}
                                     <h3>
                                     Wallet {index+1}
                                     </h3>
