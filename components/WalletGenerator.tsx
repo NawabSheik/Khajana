@@ -135,6 +135,7 @@ const WalletGenerator = () => {
             }
         } else {
             mnemonic = generateMnemonic();
+            handleAddWallet();
         }
 
         const words = mnemonic.split(" ");
@@ -183,8 +184,8 @@ const WalletGenerator = () => {
     return (
         <div>
             <div className='intro-div'>
-                <h1 className="text-5xl font-bold intro-head">Khajana supports multiple blockchain</h1>
-                <p className="text-2xl font-bold">Choose a blockchain to get started</p>
+                <h1 className="text-5xl font-bold intro-head">Khajana</h1>
+                <p className="text-2xl font-bold">A wallet generation system that supports your favourite blockchain </p>
 
                 <div className="wallet-selection">
                     <button className='wallet-selection-button'
@@ -213,8 +214,8 @@ const WalletGenerator = () => {
 
             <div className='secret-block'>
                 <div >
-                    <h1 className='secret-head'>Secret Recovery Phrase</h1>
-                    <p className='secret-warning'>Save this word in a safe place</p>
+                    <h1 className='secret-head'>The Chamber of Secret</h1>
+                    <p className='secret-warning'>Save the horcruxes for your next wallet generation</p>
                 </div>
 
                 <div>
