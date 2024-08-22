@@ -288,7 +288,7 @@ const handleGenerateWallet=()=>{
 
                         <div>
                             {wallets.map((wallet:any, index:number)=>(
-                               <div key={index}> {/* Add a key here */}
+                               <div key={wallet.publicKey}> {/* Add a key here */}
                                     <h3>
                                     Wallet {index+1}
                                     </h3>
