@@ -6,6 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  font-family: Arial, Helvetica, sans-serif;
+
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,3 +34,132 @@ body {
     text-wrap: balance;
   }
 }
+
+.intro-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  width:100vw;
+  
+}
+
+.intro-head{
+  margin-top:5vh;
+  margin-bottom: 2vh;
+}
+
+.wallet-selection{
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  gap:2rem;
+  margin-top:3rem;
+
+}
+
+.wallet-selection-button{
+  background-color: rgba(25, 25, 25, 0.324);
+  padding:1.25rem;
+  border:1px solid rgba(255, 255, 255, 0.237);
+  border-radius:1.25rem;
+}
+
+.secret-block{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.secret-head{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.secret-warning{
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+
+.secret-input{
+  background-color: rgba(132, 132, 132, 0.505);
+  color:#fff;
+  width:60vw;
+  height: 6vh;
+  border:1px solid #fff;
+  border-radius: 10px;
+}
+
+.secret-generation-button{
+  font-size: 1.25rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.secret-phrases{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.secret-intro{
+  font-size:2.25rem;
+  font-weight: 600;
+  margin-top:2rem;
+}
+
+.secret-mnemonic-handle{
+  font-size: 1.5rem;
+  margin-top:2rem;
+  font-weight: 800;
+  margin-left: 2rem;
+}
+
+.phrases-words{
+  font-size:2rem;
+}
+
+.wallets{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100vw;
+  margin-top: 2rem;
+}
+
+.wallet-section{
+  width:80vw;
+  background-color: #5252524a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border:1px solid #fff;
+  border-radius: 10px;
+}
+
+.wallets-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+
+}
+
+.wallets-section>h2{
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.wallet-operation{
+  font-size:1.5rem;
+  margin-left:2rem;
+  padding:10px;
+}
+
