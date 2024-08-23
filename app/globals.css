@@ -96,10 +96,34 @@ body {
   border-radius: 10px;
 }
 
+@media(max-width:768px){
+  .secret-head{
+    font-size:2rem;
+    font-weight:600;
+  }
+
+  .secret-warning{
+    font-size:1rem;
+    font-weight:500;
+  }
+
+  .secret-input{
+    width:40vw;
+  }
+
+
+}
+
 .secret-generation-button{
   font-size: 1.25rem;
   margin-left: 2rem;
   margin-top: 2rem;
+}
+
+@media(max-width:768px){
+  .secret-generation-button{
+    font-size:1rem;
+  }
 }
 
 .secret-phrases{
@@ -124,6 +148,21 @@ body {
 
 .phrases-words{
   font-size:2rem;
+}
+
+
+@media(max-width:768px){
+  .secret-intro{
+    font-size:1.5rem;
+  }
+
+  .secret-mnemonic-handle{
+    font-size:1.25rem;
+  }
+
+  .phrases-words{
+    font-size: 0.75rem;
+  }
 }
 
 .wallets{
@@ -181,3 +220,39 @@ body {
   margin-bottom:1rem;
 }
 
+
+@media(max-width:768px){
+  .wallet-section{
+    width:100vw;
+  }
+
+  .wallet-operation{
+    font-size:1rem;
+    margin-left:1.25rem;
+  }
+
+  .wallet-section{
+    width:80vw;
+  }
+
+  .wallets-section>h2{
+    font-size:1.5rem;
+  }
+}
+
+
+.wallet-info{
+  width:60vw;
+  overflow-wrap: break-word;
+ 
+}
+
+.wallet-index{
+  font-size:1.75rem;
+  margin-top:1.25rem;
+  margin-bottom:1rem;
+}
+
+.wallet-info{
+
+}

@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import nacl from "tweetnacl";
 import { generateMnemonic, mnemonicToSeedSync, validateMnemonic } from 'bip39';
 import { derivePath } from 'ed25519-hd-key';
-import { Keypair } from '@solana/web3.js';
+import { clusterApiUrl, Keypair, Connection, PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import motion from "framer-motion";
 import bs58 from "bs58";
 import { ethers } from "ethers";
@@ -28,6 +28,9 @@ interface Wallet {
     path: string;
 }
 
+const connection=new Connection (clusterApiUrl("devnet"));
+console.log(`Connected`);
+
 const WalletGenerator = () => {
     const [mnemonicWords, setMnemonicWords] = useState<string[]>([]);
     const [pathTypes, setPathTypes] = useState<string[]>([]);
@@ -42,6 +45,9 @@ const WalletGenerator = () => {
         "60": "Ethereum",
     };
     const pathTypeName = pathTypeNames[pathTypes[0]] || "";
+
+    const [buttonText,setButtonText]=useState('Show Balance');
+    const [isBalanceShown,setIsBalanceShown]=useState(false);
 
 
     useEffect(() => {
@@ -181,6 +187,27 @@ const WalletGenerator = () => {
         }
     }
 
+    const showBalance=async (publicKey:string)=>{
+     
+        const address=new PublicKey(publicKey);
+       const balance=await connection.getBalance(address);
+       const balanceInSol= balance/LAMPORTS_PER_SOL;
+       console.log(`the balance of the account at ${address} is ${balanceInSol}`);
+       setButtonText(`${balanceInSol}`);
+       setIsBalanceShown(true);
+
+    }
+
+    const handleShowingBalance=async (publicKey:string)=>{
+        if(isBalanceShown){
+            setButtonText('Show Balance');
+            setIsBalanceShown(false);
+        }
+        else{
+            showBalance(publicKey);
+        }
+    }
+
     return (
         <div>
             <div className='intro-div'>
@@ -268,23 +295,23 @@ const WalletGenerator = () => {
                                         </button>
                                    
 
-
-
                                     <div>
                                         {wallets.map((wallet, index) => (
                                             <div key={wallet.publicKey}> {/* Add a key here */}
                                                <div className="wallet-section">
-                                                <h3>
+                                                <h3 className='wallet-index'>
                                                     Wallet {index + 1}
                                                 </h3>
                                                 <div>
-                                                <div>
-                                                    <span>Public Key</span>
+                                                <div className="wallet-info">
+                                                    <p>Public Key</p>
                                                     <p>{wallet.publicKey}</p>
-                                                    <span>Private Key</span>
+                                                    <br/>
+                                                    <p>Private Key</p>
                                                     <p>{wallet.privateKey}</p>
                                                 </div>
-                                                    <button  className="balance-button">Show balance</button>
+                                                    <button onClick={()=>handleShowingBalance(wallet.publicKey)} className="balance-button">{buttonText}</button>
+                                                    
                                                 </div>
 
                                                 <div className="wallet-transaction-buttons">
