@@ -27,6 +27,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    overflow-x:hidden ;
 }
 
 @layer utilities {
@@ -135,13 +136,14 @@ body {
 
 .wallet-section{
   width:80vw;
-  background-color: #5252524a;
+  background-color: #52525228;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border:1px solid #fff;
   border-radius: 10px;
+  margin-top:2rem;
 }
 
 .wallets-section{
@@ -149,6 +151,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
+
 
 }
 
@@ -161,5 +164,20 @@ body {
   font-size:1.5rem;
   margin-left:2rem;
   padding:10px;
+}
+
+
+.balance-button{
+  margin-top:1.25rem;
+  font-weight:600;
+}
+
+.wallet-transaction-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom:1rem;
 }
 

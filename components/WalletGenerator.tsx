@@ -41,8 +41,8 @@ const WalletGenerator = () => {
         "501": "Solana",
         "60": "Ethereum",
     };
-
     const pathTypeName = pathTypeNames[pathTypes[0]] || "";
+
 
     useEffect(() => {
         const storedWallets = localStorage.getItem("wallets");
@@ -259,7 +259,6 @@ const WalletGenerator = () => {
                     <div>
                         {wallets.length > 0 && (
                             <div className='wallets'>
-                                <div className="wallet-section">
                                     <div >
                                         <button className='wallet-operation' onClick={() => handleAddWallet()}>
                                             Add wallet
@@ -267,19 +266,31 @@ const WalletGenerator = () => {
                                         <button className='wallet-operation' onClick={() => handleClearWallets()}>
                                             Delete Wallets
                                         </button>
-                                    </div>
+                                   
+
+
 
                                     <div>
                                         {wallets.map((wallet, index) => (
                                             <div key={wallet.publicKey}> {/* Add a key here */}
+                                               <div className="wallet-section">
                                                 <h3>
                                                     Wallet {index + 1}
                                                 </h3>
+                                                <div>
                                                 <div>
                                                     <span>Public Key</span>
                                                     <p>{wallet.publicKey}</p>
                                                     <span>Private Key</span>
                                                     <p>{wallet.privateKey}</p>
+                                                </div>
+                                                    <button  className="balance-button">Show balance</button>
+                                                </div>
+
+                                                <div className="wallet-transaction-buttons">
+                                                    <button>Transact</button>
+                                                    <button>Request Airdrop</button>
+                                                </div>
                                                 </div>
                                             </div>
                                         ))}
